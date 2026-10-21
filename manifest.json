@@ -1,0 +1,40 @@
+{
+  "manifest_version": 2,
+  "name": "Select Search",
+  "version": "1.1",
+  "description": "Adds search functionality to large select lists",
+  "icons": {
+    "32": "icons/select-search-32.png",
+    "64": "icons/select-search-64.png"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "select-search.js"
+      ],
+      "all_frames": true
+    }
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "browser_style": true
+  },
+  "browser_action": {
+    "default_icon": {
+      "32": "icons/select-search-32.png",
+      "64": "icons/select-search-64.png"
+    },
+    "default_title": "Select Search Options"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  }
+}
